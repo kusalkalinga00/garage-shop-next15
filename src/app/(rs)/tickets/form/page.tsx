@@ -5,7 +5,7 @@ import TicketForm from "@/app/(rs)/tickets/form/TicketForm";
 import * as Sentry from "@sentry/nextjs";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Users, init as kindeInit } from "@kinde/management-api-js";
-import { desc } from "drizzle-orm";
+
 
 export async function generateMetadata({
   searchParams,

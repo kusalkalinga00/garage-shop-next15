@@ -11,16 +11,11 @@ import { InputWithLabel } from "@/components/inputs/InputWithLabel";
 import {
   insertTicketSchema,
   type insertTicketSchemaType,
-  type selectTicketSchema,
 } from "@/zod-schemas/ticket";
 
 import {
-  insertCustomerSchema,
-  type insertCustomerSchemaType,
   type selectCustomerSchemaType,
 } from "@/zod-schemas/customer";
-import { title } from "process";
-import { desc } from "drizzle-orm";
 import { CheckboxWithLabel } from "@/components/inputs/CheckboxWithLabel";
 
 type Props = {
