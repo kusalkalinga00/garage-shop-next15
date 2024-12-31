@@ -40,7 +40,7 @@ export function TextAreaWithLabel<S>({
           <FormControl>
             <Textarea
               id={nameInSchema}
-              className={className}
+              className={`${className} disabled:text-blue-500 dark:disabled::text-green-500 disabled:opacity-75`}
               {...field}
               {...props}
             />
