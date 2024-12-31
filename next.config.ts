@@ -10,6 +10,7 @@ export default withSentryConfig(nextConfig, {
 
   // An auth token is required for uploading source maps.
   authToken: process.env.SENTRY_AUTH_TOKEN,
+  telemetry: false, // if you want to sentry to collect data
 
   silent: false, // Can be used to suppress logs
 });

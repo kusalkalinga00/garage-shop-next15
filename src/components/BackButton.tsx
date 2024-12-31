@@ -18,7 +18,7 @@ type Porps = {
     | undefined;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export function BackButton({ title, vartiants, clasName, ...props }: Porps) {
+export function BackButton({ title, vartiants, clasName,  }: Porps) {
   const router = useRouter();
 
   return (

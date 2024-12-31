@@ -16,13 +16,11 @@ import { InputHTMLAttributes } from "react";
 type Props<S> = {
   fieldTitle: string;
   nameInSchema: keyof S & string;
-  className?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
 export function InputWithLabel<S>({
   fieldTitle,
   nameInSchema,
-  className,
   ...props
 }: Props<S>) {
   const form = useFormContext();

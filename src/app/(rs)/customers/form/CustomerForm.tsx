@@ -22,7 +22,7 @@ type Props = {
 };
 
 export default function CustomerForm({ customer }: Props) {
-  const { getPermission, getPermissions, isLoading } = useKindeBrowserClient();
+  const { getPermission, isLoading } = useKindeBrowserClient();
   const isManager = !isLoading && getPermission("manager")?.isGranted;
 
   console.log(isManager);
