@@ -6,7 +6,9 @@ config({
   path: ".env.local",
 });
 
-const sql = neon(process.env.DATABASE_URL!);
+const url = process.env.DATABASE_URL;
+console.log("check db url ", url);
+const sql = neon(url!);
 
 //logger
 
