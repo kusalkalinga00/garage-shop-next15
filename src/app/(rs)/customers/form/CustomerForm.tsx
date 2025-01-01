@@ -16,6 +16,8 @@ import { InputWithLabel } from "@/components/inputs/InputWithLabel";
 import { StateArray } from "@/constants/StatesArray";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { CheckboxWithLabel } from "@/components/inputs/CheckboxWithLabel";
+import { useAction } from "next-safe-action/hooks";
+import { saveCustomerAction } from "@/app/actions/saveCustomerAction";
 
 type Props = {
   customer?: selectCustomerSchemaType;
@@ -51,6 +53,23 @@ export default function CustomerForm({ customer }: Props) {
     mode: "onBlur",
     resolver: zodResolver(insertCustomerSchema),
     defaultValues,
+  });
+
+  const {
+    execute: executeSave,
+    result: saveResult,
+    isExecuting: saving,
+    reset: resetSaveAction,
+  } = useAction(saveCustomerAction, {
+    onSuccess({ data }) {
+      console.log(data);
+      // toast user
+    },
+
+    onError({ error }) {
+      console.log(error);
+      // toast user
+    },
   });
 
   async function onSubmit(data: insertCustomerSchemaType) {
