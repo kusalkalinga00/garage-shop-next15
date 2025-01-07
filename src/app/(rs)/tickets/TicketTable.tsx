@@ -205,8 +205,8 @@ export default function TicketTable({ data }: Props) {
         </Table>
       </div>
       {/* pagination */}
-      <div className="flex justify-between items-center mt-3">
-        <div className="flex basis-1/2 items-center">
+      <div className="flex justify-between items-center mt-3 gap-1 flex-wrap">
+        <div className="">
           <p className="whitespace-nowrap font-bold">
             {`Page ${
               table.getState().pagination.pageIndex + 1
@@ -218,7 +218,28 @@ export default function TicketTable({ data }: Props) {
             }]`}
           </p>
         </div>
-        <div className="space-x-1 ">
+
+        <div className="flex flex-row gap-1">
+          <div className="flex flex-row gap-1">
+            <div className="flex flex-row gap-1">
+              <Button
+                variant={"outline"}
+                onClick={() => table.resetColumnFilters()}
+              >
+                Reset Filters
+              </Button>
+              <Button variant={"outline"} onClick={() => router.refresh()}>
+                Refresh Data
+              </Button>
+
+              <Button variant={"outline"} onClick={() => table.resetSorting()}>
+                Reset Sorting
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-row gap-1">
           <Button
             variant={"outline"}
             onClick={() => {
@@ -232,18 +253,7 @@ export default function TicketTable({ data }: Props) {
           >
             Previous
           </Button>
-          <Button
-            variant={"outline"}
-            onClick={() => table.resetColumnFilters()}
-          >
-            Reset Filters
-          </Button>
-          <Button variant={"outline"} onClick={() => router.refresh()}>
-            Refresh Data
-          </Button>
-          <Button variant={"outline"} onClick={() => table.resetSorting()}>
-            Reset Sorting
-          </Button>
+
           <Button
             variant={"outline"}
             onClick={() => {
